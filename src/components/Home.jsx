@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Search } from "@material-ui/icons"
 import InfoAboutWord from './InfoAboutWord';
-// https://api.dictionaryapi.dev/api/v2/entries/<language_code>/<word>
 // select box styling material ui
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -10,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import ReactLoading from "react-loading"
 
+// material ui select option
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -26,11 +26,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const classes = useStyles();
+    // state management
     let [word, setWord] = useState("");
     let [lgCode, setLgCode] = useState("en_US");
     let [dataWord, setDataWord] = useState([]);
     let [isdataFound, setDataFound] = useState(false);
     let [isLoading, setLoading] = useState(false);
+
     function inputChange(e) {
         setWord(e.target.value);
     }
@@ -40,6 +42,8 @@ const Home = () => {
     }
     function onSubmit(e) {
         setLoading(true);
+        // https://api.dictionaryapi.dev/api/v2/entries/<language_code>/<word>
+        // get request for word data
         const url = `https://api.dictionaryapi.dev/api/v2/entries/${lgCode}/${word}`;
         axios.get(url)
             .then((wordData) => {
@@ -48,8 +52,6 @@ const Home = () => {
                 setDataFound(true);
             })
             .catch((err) => {
-                // console.log(err);
-
                 setDataFound(false);
                 setLoading(false);
             })
@@ -62,6 +64,7 @@ const Home = () => {
             <div className="mainParent">
                 <div className="main">
                     <div className="inputBoxMain">
+                        {/* selection box */}
                         <FormControl className={classes.formControl}>
                             <InputLabel htmlFor="age-native-simple">Language</InputLabel>
                             <Select native
@@ -87,7 +90,9 @@ const Home = () => {
                             <Search className={classes.buttonStyle}></Search>
                         </button>
                     </div>
+                    {/* Info about word section */}
                     <div className="wordDataDiv" style={{ textAlign: "center", marginTop: "2rem" }}>
+                        {/* loading effect */}
                         {
                             isLoading ?
                                 <>

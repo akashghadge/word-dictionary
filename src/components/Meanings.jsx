@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import ReactLoading from "react-loading"
 
 const Meanings = () => {
+    // state section
     let [isLoading, setLoading] = useState(true);
-
     let params = useParams();
     let [meanData, setMeanData] = useState([]);
     useEffect(() => {
@@ -27,6 +27,7 @@ const Meanings = () => {
                 <h1 className="headingWord">Meanings</h1>
             </div>
             <div className="meaningMain">
+                {/* loading effect */}
                 {
                     isLoading ?
                         <>

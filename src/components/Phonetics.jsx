@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import ReactLoading from "react-loading"
 import { LibraryMusicTwoTone } from "@material-ui/icons"
 const Phonetics = () => {
+    // state section
     let [isLoading, setLoading] = useState(false);
     let params = useParams();
     let [phData, setPhData] = useState([]);
@@ -28,6 +29,7 @@ const Phonetics = () => {
                 <h1 className="headingWord">Phonetics</h1>
             </div>
             <div className="phoneticsMain">
+                {/* loading effect */}
                 {
                     isLoading ?
                         <>

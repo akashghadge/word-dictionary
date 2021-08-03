@@ -14,6 +14,7 @@ const InfoAboutWord = (props) => {
             </h1>
             <hr style={{ margin: "1rem" }}></hr>
             <div className="infoSection">
+                {/* nevigate two meaning and phonetics */}
                 <NavLink className="navlinkCustom" to={`/phonetics/${props.lg}/${props.dataWord.word}`}>
                     <h5>phonetics : {props.dataWord.phonetics.length}</h5>
                 </NavLink>

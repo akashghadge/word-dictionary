@@ -7,6 +7,7 @@ import Phonetics from './components/Phonetics';
 function App() {
   return (
     <>
+      {/* router setting for different routes */}
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/meanings/:lg/:word/" component={Meanings}></Route>
