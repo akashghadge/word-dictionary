@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ReactLoading from "react-loading"
 
 const Meanings = () => {
-    let [isLoading, setLoading] = useState(false);
+    let [isLoading, setLoading] = useState(true);
 
     let params = useParams();
     let [meanData, setMeanData] = useState([]);
@@ -14,7 +14,6 @@ const Meanings = () => {
         axios.get(url)
             .then((data) => {
                 setMeanData(data.data[0].meanings);
-                // console.log(data.data[0].meanings);
                 setLoading(false);
             })
             .catch((err) => {
@@ -31,8 +30,10 @@ const Meanings = () => {
                 {
                     isLoading ?
                         <>
-                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                <ReactLoading type={"bubbles"} color={"black"} height={"40%"} width={"40%"}></ReactLoading>
+                            <div style={{ "height": "100vh", "width": "100vw" }}>
+                                <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <ReactLoading type={"spin"} color={"black"} height={"10%"} width={"10%"}></ReactLoading>
+                                </div>
                             </div>
                         </>
                         :
@@ -46,8 +47,16 @@ const Meanings = () => {
                                                 elem.definitions.map((innerElem, i) => {
                                                     return (
                                                         <>
-                                                            <h6 className="textMeaning">definition : {innerElem.definition}</h6>
-                                                            <h6 className="textMeaning">Example : {innerElem.example}</h6>
+                                                            <h6 className="textMeaning">
+                                                                <span className="textMeaningDef">
+                                                                    definition :
+                                                                </span>
+                                                                {innerElem.definition}</h6>
+                                                            <h6 className="textMeaning">
+                                                                <span className="textMeaningDef">
+                                                                    Example :
+                                                                </span>
+                                                                {innerElem.example}</h6>
                                                         </>
                                                     )
                                                 })

@@ -4,7 +4,14 @@ const InfoAboutWord = (props) => {
     console.log(props.dataWord);
     return (
         <>
-            <h1>Word : {props.dataWord.word}</h1>
+            <h1>
+                <span style={{ color: "purple" }}>
+                    Word :
+                </span>
+                <span style={{ textTransform: "capitalize", marginLeft: "1rem" }}>
+                    {props.dataWord.word}
+                </span>
+            </h1>
             <hr style={{ margin: "1rem" }}></hr>
             <div className="infoSection">
                 <NavLink className="navlinkCustom" to={`/phonetics/${props.lg}/${props.dataWord.word}`}>

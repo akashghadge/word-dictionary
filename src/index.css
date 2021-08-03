@@ -86,6 +86,10 @@ Node scss is preprocessor for scss
 .textMeaning {
   font-size: 1rem; }
 
+.textMeaningDef {
+  text-transform: capitalize;
+  color: purple; }
+
 .headMeaningText {
   font-size: 2rem;
   color: purple;
@@ -108,9 +112,15 @@ Node scss is preprocessor for scss
   text-shadow: 1px 1px 2px black; }
 
 .audioLink {
-  font-size: 1.5rem;
   color: purple;
   text-decoration: none; }
 
 .dataNot {
-  color: purple; }
+  color: purple;
+  margin-top: 5rem; }
+
+@media (max-width: 500px) {
+  .headingBox {
+    height: 15vh; }
+  html {
+    font-size: 70%; } }

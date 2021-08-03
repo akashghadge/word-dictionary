@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import ReactLoading from "react-loading"
-
+import { LibraryMusicTwoTone } from "@material-ui/icons"
 const Phonetics = () => {
     let [isLoading, setLoading] = useState(false);
     let params = useParams();
@@ -31,8 +31,10 @@ const Phonetics = () => {
                 {
                     isLoading ?
                         <>
-                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                <ReactLoading type={"bubbles"} color={"black"} height={"10%"} width={"10%"}></ReactLoading>
+                            <div style={{ "height": "100vh", "width": "100vw" }}>
+                                <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <ReactLoading type={"spin"} color={"black"} height={"10%"} width={"10%"}></ReactLoading>
+                                </div>
                             </div>
                         </> :
                         phData != null && phData.length != 0
@@ -43,7 +45,7 @@ const Phonetics = () => {
                                         <div className="phoneticSingle">
                                             <h5 className="textPhonetic">Text : {elem.text}</h5>
                                             <a href={elem.audio} target="blank" className="audioLink">
-                                                Audio Pronunciation
+                                                <LibraryMusicTwoTone></LibraryMusicTwoTone>
                                             </a>
                                         </div>
                                     </>
