@@ -1,0 +1,146 @@
+/*
+Node scss is preprocessor for scss
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+.mainParent {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+}
+
+
+.headingBox {
+    background-color: purple;
+    height: 20vh;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingWord {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: 700;
+    background-color: purple;
+    color: white;
+    // margin: 2rem;
+}
+
+.inputBoxMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputBoxWord {
+    border: none;
+    border-bottom: solid 3px black;
+    outline: none;
+    width: 40%;
+    max-width: 400px;
+    font-size: 1.7rem;
+    font-family: cursive;
+    margin-left: 0.5rem;
+    padding: 0.4rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: purple;
+}
+
+.submitButton {
+    outline: none;
+    background-color: rgb(184, 70, 184);
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 0.3rem;
+    border: none;
+
+    &:hover {
+        box-shadow: 1px 1px 5px 0px black;
+    }
+}
+
+.buttonBox {
+    margin: 1rem;
+    text-align: center;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all 1s;
+    }
+}
+
+.navlinkCustom {
+    text-decoration: none;
+    color: rgb(180, 0, 180);
+    padding: 1rem;
+}
+
+.infoSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meaningMain {
+    display: grid;
+    justify-content: space-around;
+}
+
+
+.meaningSingle {
+    border: 2px solid black;
+    margin: 1rem;
+    padding: 1.5rem;
+    // text-align: center;
+    border-radius: 2rem;
+}
+
+.textMeaning {
+    font-size: 1rem;
+}
+
+.headMeaningText {
+    font-size: 2rem;
+    color: purple;
+    margin-bottom: 1rem;
+}
+
+.phoneticsMain {
+    display: grid;
+    justify-content: space-around;
+    // text-align: center;
+}
+
+.phoneticSingle {
+    border: 2px solid black;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.textPhonetic {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px black;
+}
+
+.audioLink {
+    font-size: 1.5rem;
+    color: purple;
+    text-decoration: none;
+}
+
+.dataNot {
+    color: purple;
+}
+
